@@ -12,7 +12,7 @@ request("https://www.istockphoto.com/illustrations/programmer", (req, res, body)
       console.log(images);
     
     });
-//
+//links
 got(link)
 .then((response) => {
   const $ = cheerio.load(response.body);
