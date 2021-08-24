@@ -13,7 +13,7 @@ request("https://www.istockphoto.com/illustrations/programmer", (req, res, body)
     
     });
 
-// links
+// Scrape links
 
 got(link)
 .then((response) => {
