@@ -9,10 +9,9 @@ request(
       const $ = cheerio.load(body);
       $("img", "div.Gallery-module__rowContainer___3uUNM").each(function () {
         const img = $(this).attr("src");
-        images.push(img);x
+        images.push(img);
       });
       console.log(images);
     }
-  
-  }
+  },
 );
