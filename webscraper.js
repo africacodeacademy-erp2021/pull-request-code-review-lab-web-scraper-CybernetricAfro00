@@ -15,3 +15,13 @@ request(
     }
   },
 );
+//links
+got(link)
+.then((response) => {
+  const $ = cheerio.load(response.body);
+
+  $("a").each((i, link) => {
+    const { href } = link.attribs;
+    console.log(href);
+  });
+})
