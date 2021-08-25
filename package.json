@@ -98,6 +98,7 @@
     "glob": "^7.1.7",
     "glob-parent": "^5.1.2",
     "globals": "^13.9.0",
+    "got": "^11.8.2",
     "graceful-fs": "^4.2.6",
     "has": "^1.0.3",
     "has-bigints": "^1.0.1",
