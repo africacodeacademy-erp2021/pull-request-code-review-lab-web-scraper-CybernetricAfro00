@@ -3,19 +3,20 @@ const cheerio = require("cheerio");
 const got = require("got");
 
 const images = [];
-request(
-  "https://www.istockphoto.com/illustrations/programmer",
-  (req, res, body) => {
-    if (!console.error() && res.statusCode === 200) {
-      const $ = cheerio.load(body);
-      $("img", "div.Gallery-module__rowContainer___3uUNM").each(function () {
-        const img = $(this).attr("src");
-        images.push(img);
-      });
-      console.log(images);
-    }
+const link = process.argv[2];
+
+// the request
+
+request(link, (req, res, body) => {
+  if (!console.error() && res.statusCode === 200) {
+    const $ = cheerio.load(body);
+    $("img").each(function () {
+      const img = $(this).attr("src");
+      images.push(img);
+    });
+    console.log(images);
   }
-);
+});
 
 // Scrape links
 
