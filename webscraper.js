@@ -3,7 +3,9 @@ const cheerio = require("cheerio");
 const got = require("got");
 
 const images = [];
-request("https://www.istockphoto.com/illustrations/programmer", (req, res, body) => {
+request(
+  "https://www.istockphoto.com/illustrations/programmer",
+  (req, res, body) => {
     if (!console.error() && res.statusCode === 200) {
       const $ = cheerio.load(body);
       $("img", "div.Gallery-module__rowContainer___3uUNM").each(function () {
@@ -11,17 +13,17 @@ request("https://www.istockphoto.com/illustrations/programmer", (req, res, body)
         images.push(img);
       });
       console.log(images);
-    
-    });
+    }
+  }
+);
 
 // Scrape links
 
-got(link)
-.then((response) => {
+got(link).then((response) => {
   const $ = cheerio.load(response.body);
 
   $("a").each((i, link) => {
     const { href } = link.attribs;
     console.log(href);
   });
-})
+});
